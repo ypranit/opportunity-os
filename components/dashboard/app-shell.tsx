@@ -23,7 +23,7 @@ export function AppShell({ user, children }: AppShellProps) {
     <div className="flex min-h-screen bg-background">
       <SessionSync />
 
-      <div className="hidden w-64 shrink-0 border-r border-black/5 lg:block dark:border-white/10">
+      <div className="hidden w-64 shrink-0 bg-slate-950 border-r border-white/10 lg:block">
         <Sidebar />
       </div>
 
@@ -35,11 +35,12 @@ export function AppShell({ user, children }: AppShellProps) {
             aria-label="Close navigation menu"
             onClick={() => setMobileNavOpen(false)}
           />
-          <div className="glass absolute left-0 top-0 h-full w-72 shadow-xl">
+          <div className="absolute left-0 top-0 h-full w-72 bg-slate-950 border-r border-white/10 shadow-2xl">
             <Sidebar onNavigate={() => setMobileNavOpen(false)} />
           </div>
         </div>
       )}
+    
 
       <div className="flex min-w-0 flex-1 flex-col">
         <TopNav
