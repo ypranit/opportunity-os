@@ -72,13 +72,13 @@ export function DocumentUploadZone() {
         });
 
         if (error) {
-          const isBucketMissing = error.message.toLowerCase().includes("bucket");
+          console.log("SUPABASE STORAGE ERROR:", error);
+        
           setUploadState({
             status: "error",
-            message: isBucketMissing
-              ? "Storage bucket not configured yet. UI ready — create a 'documents' bucket in Supabase."
-              : error.message,
+            message: error.message,
           });
+        
           return;
         }
 
