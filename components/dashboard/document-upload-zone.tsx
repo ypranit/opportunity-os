@@ -57,6 +57,12 @@ export function DocumentUploadZone() {
 
       try {
         const supabase = createBrowserSupabaseClient();
+
+        console.log("SUPABASE URL:", process.env.NEXT_PUBLIC_SUPABASE_URL);
+
+        const buckets = await supabase.storage.listBuckets();
+        console.log("BUCKETS:", buckets);
+        
         const {
           data: { user },
         } = await supabase.auth.getUser();
